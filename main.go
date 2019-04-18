@@ -62,4 +62,36 @@ func main() {
 	myMap["key3"] = 12
 	fmt.Println(myMap)
 	fmt.Println(myMap["key1"])
+	fmt.Println(len(myMap))
+
+	value, ok := myMap["key4"]
+	fmt.Println(value, ok)
+
+	if value, ok = myMap["key1"]; ok {
+		fmt.Println(value, ok)
+	}
+
+	elements := map[string]string{
+		"H":  "Hydrogen",
+		"He": "Helium",
+		"Li": "Lithium",
+		"Be": "Beryllium",
+		"B":  "Boron",
+		"C":  "Carbon",
+		"N":  "Nitrogen",
+		"O":  "Oxygen",
+	}
+
+	if element, ok := elements["H"]; ok {
+		fmt.Println(element, ok)
+	}
+
+	elements2 := map[string]map[string]string{
+		"H": map[string]string{
+			"name":  "Hydrogen",
+			"state": "gas",
+		},
+	}
+
+	fmt.Println(elements2)
 }
